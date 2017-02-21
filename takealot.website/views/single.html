@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>takealot.com - VIEW ITEM</title>
+    <link href="../css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <!--theme-style-->
+    <link href="../css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" href="../css/etalage.css" type="text/css" media="all" />
+    <!--//theme-style-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <script type="application/x-javascript">
+        addEventListener("load", function() {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <!--fonts-->
+    <!--<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800" rel="stylesheet" type="text/css">
+    <!--//fonts-->
+    <script src="../lib/jquery-3.1.1.min.js"></script>
+    <script src="../lib/bootstrap.min.js"></script>
+
+    <link href="../node_modules/angular-material/angular-material.css" rel="stylesheet" />
+    <script src="../lib/jquery.etalage.min.js"></script>
+    <script type="text/javascript" src="../node_modules/angular/angular.js"></script>
+    <script type="text/javascript" src="../node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+    <script type="text/javascript" src="../node_modules/angular-route/angular-route.js"></script>
+    <script type="text/javascript" src="../node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="../node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js"></script>
+    <script type="text/javascript" src="../node_modules/angular-material/angular-material.js"></script>
+    <script type="text/javascript" src="../node_modules/angular-animate/angular-animate.js"></script>
+    <script type="text/javascript" src="../node_modules/angular-aria/angular-aria.js"></script>
+    <script type="text/javascript" src="../js/app.js"></script>
+    <script type="text/javascript" src="../js/app/services.js"></script>
+    <script type="text/javascript" src="../js/app/controllers.js"></script>
+    <script>
+        jQuery(document).ready(function($) {
+
+            $('#etalage').etalage({
+                thumb_image_width: 300,
+                thumb_image_height: 400,
+                source_image_width: 900,
+                source_image_height: 1200,
+                show_hint: true,
+                click_callback: function(image_anchor, instance_id) {
+                    alert('Callback example:\nYou clicked on an image with the anchor: "' + image_anchor + '"\n(in Etalage instance: "' + instance_id + '")');
+                }
+            });
+
+        });
+    </script>
+
+</head>
+
+<body ng-app="takealot">
+    <!--header-->
+    <div ng-controller="SingleCtrl">
+        <div class="header">
+            <div class="bottom-header">
+                <div class="container">
+                    <div class="header-bottom-left">
+                        <span><div class="logo">
+                        <a href="home.html"><img style="width:180px; height:50px" src="../images/logo.png" alt=" " /></a>
+                    </div>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    <div>
+                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    <a style="color:black" href="../views/enquiries.html">Email Us</a> | 
+                        <a style="color:black" href="">Help</a>
+                    </div></span>
+                    </div>
+                    <div class="header-bottom-right">
+                        <div class="account">Hi! {{loggedUser}}&nbsp<a href="login.html"><span> </span><div class="dropdown">
+                            <div class="dropbtn">
+                                
+                                 My Account
+                                 </div>
+                                 <div class="dropdown-content">
+                                     <a href="#">My Account</a>
+                            <a>Track Order</a>
+                            <a>Log Return</a>
+                            <a>Invoices</a>
+                            <a href="../views/profile.html">Personal Details</a>
+                            <a>Digital Library</a>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+                <ul class="login">
+                    <li><a href="login.html"><span> </span>Login</a></li> |
+                    <li><a href="register.html">Register</a></li>
+                </ul>
+                <div class="cart"><a href="../../views/cart.html"><span> </span>Cart | {{cartItems}}</a></div>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+    <div class="footer-line">
+
+
+    </div>
+    </div>
+    <!---->
+
+    <div class="container">
+        <div class=" single_top">
+            <div ng-show="itemDeleted">
+                <h3><i>You have removed item from cart</i></h3>
+                <h4><i>Continue shopping</i></h4>
+                <div class="register-but">
+                    <form>
+                        <input style="border-radius:5px; font-size:12px" value="cart" type="submit" ng-click="close()">
+                        <div class="clearfix"> </div>
+                    </form>
+                </div>
+            </div>
+            <div ng-show="!itemDeleted">
+                <div class="single_grid" ng-repeat="item in itemView">
+                    <div class="grid images_3_of_2">
+                        <img style="width:250px; height: 250px" class="img-responsive" src="{{item.picture}}" />
+                        <div class="clearfix"> </div>
+                    </div>
+                    <div class="desc1 span_3_of_2">
+                        <h4>{{item.title}}</h4>
+                        <div class="cart-b">
+                            <div class="left-n ">{{item.price | currency : "R "}}</div>
+                            <!--<a class="now-get get-cart-in" href ng-click="addToWishList(item)">Add to WishList</a>-->
+                            <a class="now-get get-cart-in" style="margin-right: 10px;" href ng-click="addToCart(item)">Add to Cart</a>
+                            <div class="clearfix"></div>
+                        </div>
+                        <h6 style="font-size:15px">Available: {{item.availableStatus}}</h6>
+                        <h6 style="font-size:15px">Free Shipping : {{item.shippingStatus}}</h6>
+                        <p>{{item.description}}</p>
+                        <div class="share">
+                            <h5>Share Product :</h5>
+                            <ul class="share_nav">
+                                <li>
+                                    <a href="#"><img src="../images/facebook.png" title="facebook"></a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="../images/twitter.png" title="Twiiter"></a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="../images/rss.png" title="Rss"></a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="../images/gpluse.png" title="Google+"></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+            </div>
+
+            <script type="text/javascript">
+                $(window).load(function() {
+                    $("#flexiselDemo1").flexisel({
+                        visibleItems: 5,
+                        animationSpeed: 1000,
+                        autoPlay: true,
+                        autoPlaySpeed: 3000,
+                        pauseOnHover: true,
+                        enableResponsiveBreakpoints: true,
+                        responsiveBreakpoints: {
+                            portrait: {
+                                changePoint: 480,
+                                visibleItems: 1
+                            },
+                            landscape: {
+                                changePoint: 640,
+                                visibleItems: 2
+                            },
+                            tablet: {
+                                changePoint: 768,
+                                visibleItems: 3
+                            }
+                        }
+                    });
+
+                });
+            </script>
+            <script type="text/javascript" src="../lib/jquery.flexisel.js"></script>
+
+            <!--<div class="toogle">
+                <h3 class="m_3">Product Details</h3>
+                <p class="m_text">{{productDetails}}</p>
+            </div>-->
+        </div>
+
+        <!---->
+        <div class="sub-cate" style="font-size:12px">
+            <div class=" top-nav rsidebar span_1_of_left">
+                <h3 class="cate">Item View</h3>
+                <ul class="menu">
+                    <li class="item1"><a href="#">Shortcuts<img class="arrow-img list-img" src="../images/arrow1.png" alt=""/> </a>
+                        <ul class="cute">
+                            <li class="subitem1"><a href="../../views/home.html">Go To Home</a></li>
+                            <li class="subitem2"><a href="../../views/cart.html">Go To Cart</a></li>
+                            <li class="subitem3"><a href="../../views/product.html">View Products</a></li>
+                        </ul>
+                    </li>
+
+
+                </ul>
+            </div>
+            <!--initiate accordion-->
+            <script type="text/javascript">
+                $(function() {
+                    var menu_ul = $('.menu > li > ul'),
+                        menu_a = $('.menu > li > a');
+                    menu_ul.hide();
+                    menu_a.click(function(e) {
+                        e.preventDefault();
+                        if (!$(this).hasClass('active')) {
+                            menu_a.removeClass('active');
+                            menu_ul.filter(':visible').slideUp('normal');
+                            $(this).addClass('active').next().stop(true, true).slideDown('normal');
+                        } else {
+                            $(this).removeClass('active');
+                            $(this).next().stop(true, true).slideUp('normal');
+                        }
+                    });
+
+                });
+            </script>
+
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+    <!---->
+    <div class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="latter">
+
+                    <div class="clearfix"> </div>
+                </div>
+                <div class="latter-right">
+                    <p>FOLLOW US</p>
+                    <ul class="face-in-to">
+                        <li><a href="#"><span> </span></a></li>
+                        <li><a href="#"><span class="facebook-in"> </span></a></li>
+                        <div class="clearfix"> </div>
+                    </ul>
+                    <div class="clearfix"> </div>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-cate">
+                    <h5>Shop</h5>
+                    <ul>
+                        <li><a href="#">Daily Deals </a></li>
+                        <li><a href="#">App Only Deals</a></li>
+                        <li><a href="#">Our Hottest Products</a></li>
+                        <li><a href="#">Tech Hub</a></li>
+                        <li><a href="#">Gift Vouchers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-bottom-cate bottom-grid-cat">
+                    <h5>Help</h5>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Shipping and Delivery</a></li>
+                        <li><a href="#">Exchange and Returns</a></li>
+                        <li><a href="#">Bank Details</a></li>
+                        <li><a href="#">Directions to Warehouse</a></li>
+                    </ul>
+                </div>
+                <!--cate-bottom-->
+                <div class="footer-bottom-cate">
+                    <h5>Account</h5>
+                    <ul>
+                        <li><a href="#">My Account</a></li>
+                        <li><a href="#">Track Order</a></li>
+                        <li><a href="#">Exchanges and Returns</a></li>
+                        <li><a href="#">Personal Details</a></li>
+                        <li><a href="#">Invoices</a></li>
+                        <li><a href="#">Digital Library</a></li>
+                    </ul>
+                </div>
+                <div class="footer-bottom-cate">
+                    <h5>Company</h5>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Sell on Takealot</a></li>
+                        <li><a href="#">Press and News</a></li>
+                        <li><a href="#">Competition</a></li>
+                        <li><a href="#">Terms and Conditions</a></li>
+                        <li class="phone"></li>
+
+                    </ul>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="footer-line">
+        <div>
+            <p style="color:white; text-align:right; margin-right: 49px;">Switch to Mobile - offline</p>
+            <p style=" font-size:15px; color:white; text-align:right; margin-right:45px;">© Takealot Online (Pty) Ltd.</p>
+        </div>
+
+    </div>
+    </div>
+</body>
+
+</html>

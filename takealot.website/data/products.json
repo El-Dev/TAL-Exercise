@@ -1,0 +1,121 @@
+[{
+        "category": "Audio",
+        "price": 400,
+        "title": "LG Speakers",
+        "description": "Bluetooth speakers",
+        "picture": "../img/sp.jpg",
+        "quantity": "200",
+        "_id": 1,
+        "productId": "AULG0001"
+    },
+    {
+        "category": "Audio",
+        "productId": "AUBE0001",
+        "price": 600,
+        "title": "Beats by Dre",
+        "description": "Pill, Bluetooth speakers",
+        "picture": "../img/sp.jpg",
+        "quantity": "200",
+        "_id": 2
+    },
+    {
+        "category": "Gaming",
+        "productId": "GAPS0001",
+        "price": 900,
+        "title": "PS4 Controller",
+        "description": "Wireless controller",
+        "picture": "../img/psc.jpg",
+        "quantity": "200",
+        "_id": 3
+    },
+    {
+        "category": "Gaming",
+        "productId": "GAXB0001",
+        "price": 1100,
+        "title": "XBox Controller",
+        "description": "Wireless controller",
+        "picture": "../img/xc.jpg",
+        "quantity": "200",
+        "_id": 4
+    },
+    {
+        "category": "Electronics",
+        "productId": "ELSA0001",
+        "price": 8000,
+        "title": "SAMSUNG TV",
+        "description": "LED, Crystal clear pictures",
+        "picture": "../img/stv.jpg",
+        "quantity": "200",
+        "_id": 5
+    },
+    {
+        "category": "Kitchen",
+        "productId": "KIST0001",
+        "price": 9250,
+        "title": "SAMSUNG Stove",
+        "description": "4 plate stove with a oven",
+        "picture": "../img/kat.jpg",
+        "quantity": "200",
+        "_id": 6
+    },
+    {
+        "category": "Kitchen",
+        "productId": "KIKI0001",
+        "price": 12200,
+        "title": "K.I.C Fridge",
+        "description": "360 litre fridge with freezer",
+        "picture": "../img/ir.jpg",
+        "quantity": "200",
+        "_id": 7
+    },
+    {
+        "category": "Kitchen",
+        "productId": "KISA0001",
+        "price": 21300,
+        "title": "SAMSUNG Fridge",
+        "description": "400 litre fridge with bluetooth and other cool stuff",
+        "picture": "../img/wave.jpg",
+        "quantity": "200",
+        "_id": 7
+    },
+    {
+        "category": "Gaming",
+        "productId": "GACH0001",
+        "price": "200",
+        "title": "PS4 Controller Charger",
+        "description": "This charger works with other devices",
+        "picture": "../img/dvd.png",
+        "quantity": "200",
+        "_id": 7
+    },
+    {
+        "category": "Books",
+        "productId": "BOPE0001",
+        "price": 10,
+        "title": "Pele",
+        "description": "The story of the legendary football player",
+        "picture": "../img/pele.jpg",
+        "quantity": "200",
+        "_id": 7
+    },
+    {
+        "category": "Books",
+        "productId": "BOJU0001",
+        "price": 12,
+        "title": "Jungle Book",
+        "description": "A story of a boy that grew up in the jungle",
+        "picture": "../img/tjb.jpg",
+        "quantity": "200",
+        "_id": 7
+    },
+    {
+        "category": "Books",
+        "productId": "BOLO0001",
+        "price": 20,
+        "title": "Long Walk to Freedom",
+        "description": "This tells the story of the first black president in south africa",
+        "picture": "../img/lwtf.jpg",
+        "quantity": "200",
+        "_id": 7
+    }
+]

@@ -1,0 +1,184 @@
+//OrderJSON
+[{
+        "id": 1,
+        "payDate": "27/02/2017",
+        "amount": 2.5,
+        "customerId": "EKI00001",
+        "orderId": 255454,
+        "creditCardNo": "565895656489"
+    },
+    //EnquiriesJSON
+    {
+        "id": 1,
+        "fullName": "Steve",
+        "email": "Jobs@Apple.com",
+        "number": "5555-44444",
+        "order": "52145556",
+        "comment": "My order is taking forever.",
+        "issues": "Delivery"
+    },
+    //ProductJSON
+    {
+        "id": 1,
+        "description": "Wireless Speakers",
+        "price": 200,
+        "quantity": 50,
+        "name": "Headphones",
+        "supplier": "LG",
+        "category": "Audio",
+        "productId": "AUHE00001",
+        "shipping": "NO"
+    },
+    //Subscription
+    {
+        "id": 1,
+        "firstName": "Elvis",
+        "lastName": "King",
+        "email": "elvis.kink@mail.com",
+        "subscriptions": [
+            "Movies",
+            "Games",
+            "Electronics"
+        ]
+    },
+    //CustomerJSON
+    {
+        "id": 1,
+        "firstName": "Steve",
+        "lastName": "Jobs",
+        "salutation": "Mr",
+        "customerId": "EMP00001",
+        "email": "androidxero@gmail.com",
+        "cellNumber": "0749087654",
+        "telephone": "0115874583",
+        "telephone2": "0115427544",
+        "gender": "Male",
+        "dob": "01-May-2016",
+        "pin": "12A45",
+        "sms": "NO",
+        "promo": "YES"
+    },
+    {
+        "live": 0,
+        "mm": 1,
+        "mb": 1,
+        "dc": 1,
+        "cc": 1,
+        "mer": "ReversideAppDemo",
+        "oid": "EMF170001",
+        "inv": "EMF170001",
+        "ttl": 20,
+        "tel": "0733493468",
+        "eml": "elvismpai@ymail.com",
+        "vid": "",
+        "cur": "ZAR",
+        "cbk": "http://192.168.2.199:10001/ipay.json",
+        "cst": 1,
+        "crl": 2,
+        "hsh": "hjjhjbGsyugjEh"
+    },
+    {
+        "live": 0,
+        "oid": "EMF170001",
+        "inv": "demo",
+        "amount": 20,
+        "tel": "0733493468",
+        "eml": "elvismpai@ymail.com",
+        "vid": "demo",
+        "cur": "ZAR",
+        "cbk": "http://192.168.2.199:10001/ipay.json",
+        "cst": 1,
+        "crl": 2,
+        "hash": "demo"
+    },
+    {
+        "scope": "https://uri.paypal.com/services/subscriptions https://api.paypal.com/v1/payments/.* https://api.paypal.com/v1/vault/credit-card https://uri.paypal.com/services/applications/webhooks openid https://uri.paypal.com/payments/payouts https://api.paypal.com/v1/vault/credit-card/.*",
+        "nonce": "2017-02-15T12:37:39Z8yKN6ABq1ZwRhqYQPS-hHm5LbALoTzOBli-omskzDPU",
+        "access_token": "A101.2831z80wXSGbcmngulpiueV3vbg20hMn1lX4AaksS6Hn-o8K_RyozD8u2ZJfNVOi.1CGznWNCVIhaT8X4R1mohaGPqGS",
+        "token_type": "Bearer",
+        "app_id": "APP-80W284485P519543T",
+        "expires_in": 32400
+    },
+    {
+        //I-Pay request API
+        SiteCode: "xxx",
+        CountryCode: "ZA",
+        CurrencyCode: "ZAR",
+        Amount: 201.2,
+        TransactionReference: "",
+        BankReference: "",
+        Customer: "",
+        CancelUrl: "",
+        ErrorUrl: "",
+        SuccessUrl: "",
+        NotifyUrl: "",
+        isTest: true,
+        HashCheck: ""
+
+    },
+    //PayPal request API 
+    -d '{
+    "intent": "sale",
+    "payer": {
+        "payment_method": "paypal"
+    },
+    "transactions": [{
+        "amount": {
+            "total": "30.11",
+            "currency": "USD",
+            "details": {
+                "subtotal": "30.00",
+                "tax": "0.07",
+                "shipping": "0.03",
+                "handling_fee": "1.00",
+                "shipping_discount": "-1.00",
+                "insurance": "0.01"
+            }
+        },
+        "description": "This is the payment transaction description.",
+        "custom": "EBAY_EMS_90048630024435",
+        "invoice_number": "48787589673",
+        "payment_options": {
+            "allowed_payment_method": "INSTANT_FUNDING_SOURCE"
+        },
+        "soft_descriptor": "ECHI5786786",
+        "item_list": {
+            "items": [{
+                    "name": "hat",
+                    "description": "Brown color hat",
+                    "quantity": "5",
+                    "price": "3",
+                    "tax": "0.01",
+                    "sku": "1",
+                    "currency": "USD"
+                },
+                {
+                    "name": "handbag",
+                    "description": "Black color hand bag",
+                    "quantity": "1",
+                    "price": "15",
+                    "tax": "0.02",
+                    "sku": "product34",
+                    "currency": "USD"
+                }
+            ],
+            "shipping_address": {
+                "recipient_name": "Hello World",
+                "line1": "4thFloor",
+                "line2": "unit#34",
+                "city": "SAn Jose",
+                "country_code": "US",
+                "postal_code": "95131",
+                "phone": "011862212345678",
+                "state": "CA"
+            }
+        }
+    }],
+    "note_to_payer": "Contact us for any questions on your order.",
+    "redirect_urls": {
+        "return_url": "http://www.amazon.com",
+        "cancel_url": "http://www.hawaii.com"
+    }
+}
+'
+]
