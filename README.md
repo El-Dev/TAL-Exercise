@@ -19,4 +19,7 @@ And the project will start running.
 
 ```
 ###Note
-The project will not run because it doesn't have the REST Service
+The project will not run because it doesn't have the REST Service, so
+```
+I'll upload the Services soon...
+
