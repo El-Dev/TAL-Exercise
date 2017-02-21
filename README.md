@@ -3,7 +3,7 @@
 This is an angularjs project replication of takealot.com (not everything)
 
 ## Getting Started
-
+Everything you need is gonn be explained below.
 
 ### Prerequisites
 
@@ -18,5 +18,5 @@ Then run the project by typing: npm start
 And the project will start running.
 
 ```
-##Note
+###Note
 The project will not run because it doesn't have the REST Service
