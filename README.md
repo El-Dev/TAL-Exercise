@@ -12,8 +12,11 @@ You need to have node.js which you can download and install from their website (
 
 Open Node.js, navigate to the project (e.g. cd TAL-Exercise\takealot-website)
 ```
-Type, ##npm install 
+Type, npm install 
 (Wait till it installs everything)
-Then run the project by typing: ##npm start
+Then run the project by typing: npm start
 And the project will start running.
 
+```
+##Note
+The project will not run because it doesn't have the REST Service
