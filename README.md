@@ -11,6 +11,7 @@ You need to have node.js which you can download and install from their website (
 * [Node.js](https://nodejs.org/en/download/)
 
 Open Node.js, navigate to the project (e.g. cd TAL-Exercise\takealot-website)
+```
 Type, ##npm install 
 (Wait till it installs everything)
 Then run the project by typing: ##npm start
